@@ -1,6 +1,8 @@
 # az-private-linky-cap
 CAP Project to get you started with [SAP BTP Private Link Service for Azure](https://help.sap.com/viewer/product/PRIVATE_LINK/CLOUD/en-US) with [SAP Cloud SDK](https://sap.github.io/cloud-sdk/). Find SAP's tutorial with CF CLI commands [here](https://developers.sap.com/tutorials/private-link-microsoft-azure.html) and their official blog [here](https://blogs.sap.com/2021/06/28/sap-private-link-service-beta-is-available/).
 
+We used the `/sap/opu/odata/sap/epm_ref_apps_prod_man_srv` OData service for this project.
+
 ## Project context
 [Azure Private Link Service](https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview) allows private connectivity between resources running on Azure in different environments. That includes SAP's Business Technology Platform when provisioned on Azure. SAP made that functionality available via a CloudFoundry Service.
 
