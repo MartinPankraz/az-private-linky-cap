@@ -1,0 +1,54 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = az-private-linky-cap
+## language=nodejs; multitenant=false
+## approuter=
+_schema-version: '3.1'
+ID: az-private-linky-cap
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: az-private-linky-cap-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   requires:
+    - name: az-private-link
+    - name: az-destinations
+    - name: privatelink-uaa
+   provides:
+    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+resources:
+  # PrivateLink Service
+  - name: az-private-link
+    parameters:
+      service: privatelink
+      service-name: az-private-link
+      service-plan: standard
+    type: org.cloudfoundry.managed-service
+  # Destination Service
+  - name: az-destinations
+    parameters:
+      service: destination
+      service-plan: lite
+    type: org.cloudfoundry.managed-service
+  # Authorization & Trust Management
+  - name: privatelink-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-name: privatelink-uaa
+      service-plan: application
