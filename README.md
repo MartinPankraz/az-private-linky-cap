@@ -1,5 +1,13 @@
 # az-private-linky-cap
-CAP Project to get you started with [SAP BTP Private Link Service for Azure](https://help.sap.com/viewer/product/PRIVATE_LINK/CLOUD/en-US) with [SAP Cloud SDK](https://sap.github.io/cloud-sdk/). Find SAP's tutorial with CF CLI commands [here](https://developers.sap.com/tutorials/private-link-microsoft-azure.html) and their official blog [here](https://blogs.sap.com/2021/06/28/sap-private-link-service-beta-is-available/).
+CAP Project to get you started with [SAP BTP Private Link Service for Azure](https://help.sap.com/viewer/product/PRIVATE_LINK/CLOUD/en-US).
+
+Find my blog post series on the topic [here]().
+
+Additional Resources |
+--- |
+[Alternative Java Project using SAP Cloud SDK](https://github.com/MartinPankraz/az-private-linky) |
+[SAP's tutorial with CF CLI commands](https://developers.sap.com/tutorials/private-link-microsoft-azure.html) |
+[SAP's official blog](https://blogs.sap.com/2021/06/28/sap-private-link-service-beta-is-available/) |
 
 We used the `/sap/opu/odata/sap/epm_ref_apps_prod_man_srv` OData service for this project.
 
