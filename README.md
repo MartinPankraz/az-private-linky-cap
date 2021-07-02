@@ -5,7 +5,8 @@ Find my blog post series on the topic [here]().
 
 Additional Resources |
 --- |
-[Alternative Java Project using SAP Cloud SDK](https://github.com/MartinPankraz/az-private-linky) |
+[Alternative Java Project using SAP Cloud SDK](https://github.com/MartinPankraz/az-products-ui) |
+[Fiori Project using CAP or Java backend](https://github.com/MartinPankraz/az-private-linky) |
 [SAP's tutorial with CF CLI commands](https://developers.sap.com/tutorials/private-link-microsoft-azure.html) |
 [SAP's official blog](https://blogs.sap.com/2021/06/28/sap-private-link-service-beta-is-available/) |
 
