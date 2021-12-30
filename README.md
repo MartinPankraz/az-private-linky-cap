@@ -1,7 +1,7 @@
 # az-private-linky-cap
 CAP Project to get you started with [SAP BTP Private Link Service for Azure](https://help.sap.com/viewer/product/PRIVATE_LINK/CLOUD/en-US).
 
-Find my blog post series on the topic [here](https://blogs.sap.com/2021/07/02/whatever-happens-in-an-azure-and-btp-private-linky-swear-stays-in-the-linky-swear/).
+Find my blog post series on the topic [here](https://blogs.sap.com/2021/12/29/getting-started-with-btp-private-link-service-for-azure/).
 
 Additional Resources |
 --- |
@@ -25,7 +25,7 @@ Meaning you get now a managed component to expose your SAP backends to BTP on Az
 key | value |
 --- | --- |
 Name | s4test |
-URL | https://[your private IP]/ |
+URL | https://[your private hostname]/ |
 Proxy Type | Internet |
 Authentication | whatever you have here. We tested Basic Auth initially |
 
@@ -38,6 +38,6 @@ HTML5.DynamicDestination | true |
 WebIDEEnabled | true |
 WebIDEUsage | odata_abap |
 
-TrustAll needed with https and if no code based approach to override verifier.
+TrustAll needed with https, because CAP does not apply Destination custom trust store yet. See [part 7](https://blogs.sap.com/2021/12/01/btp-private-linky-swear-with-azure-how-to-setup-ssl-end-to-end-with-private-link-service/) of the series for details.
 
 Reach out via the [GitHub Issues page](https://github.com/MartinPankraz/az-private-linky-cap/issues) of this reposto talk about it some more :-)
