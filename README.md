@@ -26,8 +26,10 @@ key | value |
 --- | --- |
 Name | s4test |
 URL | https://[your private hostname]/ |
-Proxy Type | Internet |
+Proxy Type | PrivateLink |
 Authentication | whatever you have here. We tested Basic Auth initially |
+
+If your version of the CloudSDK doesn't support the new ProxyType revert to "Internet". Be aware this is only a configuration issue and by no means does the traffic flow to the internet. It will be resolved by BTP Azure DNS directly to the private link.
 
 ### Additional Properties
 key | value |
@@ -38,6 +40,8 @@ HTML5.DynamicDestination | true |
 WebIDEEnabled | true |
 WebIDEUsage | odata_abap |
 
-TrustAll needed with https, because CAP does not apply Destination custom trust store yet. See [part 7](https://blogs.sap.com/2021/12/01/btp-private-linky-swear-with-azure-how-to-setup-ssl-end-to-end-with-private-link-service/) of the series for details.
+TrustAll needed with https, because CAP v1 does not apply Destination custom trust store yet. See [part 7](https://blogs.sap.com/2021/12/01/btp-private-linky-swear-with-azure-how-to-setup-ssl-end-to-end-with-private-link-service/) of the series for details.
+
+> Note: Consider [upgrading](https://sap.github.io/cloud-sdk/docs/js/guides/upgrade-to-version-2) the Cloud SDK for Javascript to support the new proxy type PrivateLink.
 
 Reach out via the [GitHub Issues page](https://github.com/MartinPankraz/az-private-linky-cap/issues) of this reposto talk about it some more :-)
