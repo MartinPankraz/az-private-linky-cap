@@ -24,9 +24,8 @@ modules:
    build-parameters:
      builder: npm
    requires:
-    - name: az-private-link
+    - name: privatelink
     - name: az-destinations
-    - name: privatelink-uaa
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -46,10 +45,3 @@ resources:
       service: destination
       service-plan: lite
     type: org.cloudfoundry.managed-service
-  # Authorization & Trust Management
-  - name: privatelink-uaa
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: xsuaa
-      service-name: privatelink-uaa
-      service-plan: application

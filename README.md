@@ -30,6 +30,8 @@ Meaning you get now a managed component to expose your SAP backends to BTP on Az
 - For local testing from BAS use `cds bind az-private-linky-cap-srv -2 az-destinations` followed by `cds watch --profile hybrid`
 - For resources only available from SAP Private Link open an SSH tunnel via CF. See [this blog post](https://blogs.sap.com/2021/10/05/btp-private-linky-swear-with-azure-how-do-i-debug-and-test-with-live-data/) for details.
 
+For those of you looking to get into CAP authentication via XSUAA continue [here](https://blogs.sap.com/2020/03/02/using-postman-for-api-testing-with-xsuaa/)
+
 ## Destination config
 key | value |
 --- | --- |

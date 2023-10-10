@@ -20,26 +20,27 @@
     "rimraf": "^3.0.2"
   },
   "engines": {
-      "node": "^18"
+    "node": "^18"
   },
   "scripts": {
     "start": "npx cds run",
     "start-hybrid": "cds watch --profile hybrid",
-    "build:cf": "mbt build",
+    "build:cf": "mbt build --mtar archive",
     "undeploy": "cf undeploy az-private-linky-cap --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-},
+  },
   "cds": {
     "requires": {
       "s4EpmProducts": {
         "kind": "odata-v2",
         "model": "srv/external/s4EpmProducts",
-          "credentials": {
-            "destination": "s4es5",
-            "path": "/sap/opu/odata/sap/epm_ref_apps_prod_man_srv"
-          }
-      }
+        "credentials": {
+          "destination": "s4-on-azure",
+          "path": "/sap/opu/odata/sap/epm_ref_apps_prod_man_srv"
+        }
+      },
+      "auth": "dummy"
     }
   }
 }
