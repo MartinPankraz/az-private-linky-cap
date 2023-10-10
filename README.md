@@ -21,6 +21,15 @@ Meaning you get now a managed component to expose your SAP backends to BTP on Az
 
 ![Architecture overview](priv-lnk-overview.png)
 
+## Getting Started from SAP Business Application Studio
+
+- `npm install`
+- Build mta (Right-Click mta.yaml)
+- Deploy MTA archive (Right-Click mta_archives > az-private-linky-cap_1.0.0.mtar)
+- Maintain your target on the deployed Destination service az-destinations
+- For local testing from BAS use `cds bind az-private-linky-cap-srv -2 az-destinations` followed by `cds watch --profile hybrid`
+- For resources only available from SAP Private Link open an SSH tunnel via CF. See [this blog post](https://blogs.sap.com/2021/10/05/btp-private-linky-swear-with-azure-how-do-i-debug-and-test-with-live-data/) for details.
+
 ## Destination config
 key | value |
 --- | --- |

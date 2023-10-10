@@ -6,49 +6,39 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^5",
-    "express": "^4"
+    "@sap-cloud-sdk/http-client": "^3.6.0",
+    "@sap-cloud-sdk/resilience": "^3.6.0",
+    "@sap/cds": "^7",
+    "@sap/cds-dk": "^7",
+    "@sap/xssec": "^3.3.5",
+    "express": "^4",
+    "passport": "^0.6.0"
   },
   "devDependencies": {
-    "sqlite3": "^5.0.2"
+    "@cap-js/sqlite": "^1",
+    "mbt": "~1.2.24",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+      "node": "^18"
   },
   "scripts": {
-    "start": "cds run"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "es2020": true,
-      "node": true,
-      "jest": true,
-      "mocha": true
-    },
-    "globals": {
-      "SELECT": true,
-      "INSERT": true,
-      "UPDATE": true,
-      "DELETE": true,
-      "CREATE": true,
-      "DROP": true,
-      "CDL": true,
-      "CQL": true,
-      "CXL": true,
-      "cds": true
-    },
-    "rules": {
-      "no-console": "off",
-      "require-atomic-updates": "off"
-    }
-  },
+    "start": "npx cds run",
+    "start-hybrid": "cds watch --profile hybrid",
+    "build:cf": "mbt build",
+    "undeploy": "cf undeploy az-private-linky-cap --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+},
   "cds": {
     "requires": {
       "s4EpmProducts": {
-        "kind": "odata",
+        "kind": "odata-v2",
         "model": "srv/external/s4EpmProducts",
-        "credentials": {
-          "destination": "s4test",
-          "path": "/sap/opu/odata/sap/epm_ref_apps_prod_man_srv"
-        }
+          "credentials": {
+            "destination": "s4es5",
+            "path": "/sap/opu/odata/sap/epm_ref_apps_prod_man_srv"
+          }
       }
     }
   }
