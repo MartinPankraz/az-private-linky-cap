@@ -11,7 +11,6 @@ build-parameters:
    - builder: custom
      commands:
       - npm install --production
-      - npx -p @sap/cds-dk cds build --production
 
 modules:
  # --------------------- SERVER MODULE ------------------------
@@ -24,7 +23,7 @@ modules:
    build-parameters:
      builder: npm
    requires:
-    - name: privatelink
+    - name: az-private-link
     - name: az-destinations
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
