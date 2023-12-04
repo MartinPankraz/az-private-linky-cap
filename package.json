@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "mbt": "~1.2.24",
+    "mbt": "~1.2.27",
     "rimraf": "^5.0.5"
   },
   "engines": {
